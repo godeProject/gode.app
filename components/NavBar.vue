@@ -10,6 +10,7 @@
     "
   >
     <div class="flex items-center justify-end">
+      <a href="/" class="block px-3 py-2">Home</a>
       <a href="/about" class="block px-3 py-2">About</a>
       <a
         href="https://twitter.com/godeProject"
