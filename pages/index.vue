@@ -21,6 +21,16 @@
           >
             {{ display }}
           </p>
+          <div class="justify-center text-center">
+            <select v-model="EngLayout" class="rounded shadow-lg">
+              <option value="QWERTY">QWERTY <i>(Default)</i></option>
+              <option value="Dvorak">Dvorak</option>
+            </select>
+            <select v-model="ThaLayout" class="rounded shadow-lg">
+              <option value="Kedmanee">Kedmanee <i>(Default)</i></option>
+              <option value="Manoonchai">Manoonchai</option>
+            </select>
+          </div>
         </div>
 
         <div
@@ -89,13 +99,15 @@ export default Vue.extend({
       input: '',
       display: '',
       showAnswer: false,
+      EngLayout: 'QWERTY',
+      ThaLayout: 'Kedmanee',
     }
   },
   methods: {
     getData() {
       this.$axios
         .$get(
-          `https://api.gode.app/v2/convert/QWERTY/Kedmanee?message=${this.input}`
+          `https://api.gode.app/v2/convert/${this.EngLayout}/${this.ThaLayout}?message=${this.input}`
         )
         .then((data) => {
           console.log(data)
