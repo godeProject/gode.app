@@ -5,7 +5,7 @@
       <div>
         <img
           class="w-auto ml-auto mr-auto mb-3 drop-shadow-2xl"
-          src="https://res.cloudinary.com/dynrld3nm/image/upload/v1643133588/godeapp_dfs94p.webp"
+          src="/godeapp.webp"
         />
         <div class="mr-auto mb-5">
           <p

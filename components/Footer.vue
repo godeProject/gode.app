@@ -42,7 +42,7 @@ export default Vue.extend({
   name: 'Footer',
   data() {
     return {
-      ver: 'dev - 1.0.0-beta.1',
+      ver: 'dev - 1.0.0-beta.2',
     }
   },
 })
