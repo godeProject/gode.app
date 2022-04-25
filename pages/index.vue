@@ -122,12 +122,14 @@ export default Vue.extend({
   methods: {
     getData() {
       this.$axios
-        .$get(
-          `https://api.gode.app/v2/convert/${this.EngLayout}/${this.ThaLayout}?message=${this.input}`
-        )
-        .then((data) => {
-          console.log(data)
-          let ans = data.results
+        .$post('https://api.gode.app/v2/raw', {
+          engLayout: this.EngLayout,
+          thaLayout: this.ThaLayout,
+          message: this.input,
+        })
+        .then((x) => {
+          console.log(x)
+          let ans = x.results
           this.showAnswer = true
           this.display = `คุณพิมพ์ว่า: ${ans}`
         })
