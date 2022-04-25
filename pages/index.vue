@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-gray-200 h-screen">
-    <NavBar />
+  <div class="bg-zinc-200 dark:bg-gray-800 h-screen">
+    <NavBar @toggletheme="toggleTheme" />
     <div class="flex justify-center pt-20">
       <div>
         <img
@@ -22,11 +22,27 @@
             {{ display }}
           </p>
           <div class="justify-center text-center">
-            <select v-model="EngLayout" class="rounded shadow-lg">
+            <select
+              v-model="EngLayout"
+              class="
+                rounded
+                shadow-lg
+                bg-slate-200
+                dark:bg-gray-600 dark:text-white
+              "
+            >
               <option value="QWERTY">QWERTY <i>(Default)</i></option>
               <option value="Dvorak">Dvorak</option>
             </select>
-            <select v-model="ThaLayout" class="rounded shadow-lg">
+            <select
+              v-model="ThaLayout"
+              class="
+                rounded
+                shadow-lg
+                bg-slate-200
+                dark:bg-gray-600 dark:text-white
+              "
+            >
               <option value="Kedmanee">Kedmanee <i>(Default)</i></option>
               <option value="Manoonchai">Manoonchai</option>
             </select>
@@ -58,7 +74,7 @@
               dark:placeholder:text-white/50
               w-full
               dark:text-white
-              bg-gray-200
+              bg-slate-300
               dark:bg-gray-600
               outline-none
               px-3
@@ -115,6 +131,30 @@ export default Vue.extend({
           this.showAnswer = true
           this.display = `คุณพิมพ์ว่า: ${ans}`
         })
+    },
+    toggleTheme() {
+      switch (this.$colorMode.preference) {
+        case 'light':
+          this.$colorMode.preference = 'dark'
+          break
+        case 'dark':
+          this.$colorMode.preference = 'light'
+          break
+        case 'system':
+          switch (this.$colorMode.value) {
+            case 'light':
+              this.$colorMode.preference = 'dark'
+              this.$colorMode.value = 'dark'
+              break
+            case 'dark':
+              this.$colorMode.preference = 'light'
+              this.$colorMode.value = 'light'
+              break
+          }
+        default:
+          this.$colorMode.preference = 'dark'
+          break
+      }
     },
   },
 })

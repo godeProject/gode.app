@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-gray-200 h-screen">
-    <NavBar />
+  <div class="bg-gray-200 dark:bg-slate-800 h-screen">
+    <NavBar @toggletheme="toggleTheme" />
         <div class="flex justify-center pt-20">
             <div>
                 <h1 class="text-black dark:text-white text-center drop-shadow-lg text-5xl">About</h1>
@@ -27,5 +27,31 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'About',
+  methods: {
+    toggleTheme() {
+      switch (this.$colorMode.preference) {
+        case 'light':
+          this.$colorMode.preference = 'dark'
+          break
+        case 'dark':
+          this.$colorMode.preference = 'light'
+          break
+        case 'system':
+          switch (this.$colorMode.value) {
+            case 'light':
+              this.$colorMode.preference = 'dark'
+              this.$colorMode.value = 'dark'
+              break
+            case 'dark':
+              this.$colorMode.preference = 'light'
+              this.$colorMode.value = 'light'
+              break
+          }
+        default:
+          this.$colorMode.preference = 'dark'
+          break
+      }
+    },
+  },
 })
 </script>

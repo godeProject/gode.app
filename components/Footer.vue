@@ -3,7 +3,7 @@
     class="
       fixed
       bottom-0
-      bg-gray-200
+      bg-inherit
       w-full
       justify-center
       text-stone-900
