@@ -21,6 +21,13 @@
           >
             {{ display }}
           </p>
+          <p
+            id="display"
+            v-if="showErrorMessage"
+            class="text-stone-900 dark:text-white justify-center text-center"
+          >
+            {{ errorMessage }}
+          </p>
           <div class="justify-center text-center">
             <select
               v-model="EngLayout"
@@ -69,6 +76,7 @@
             v-model="input"
             type="text"
             placeholder="ใส่ข้อความตรงนี้..."
+            @keyup.enter="getData"
             class="
               placeholder:italic placeholder:text-stone-900/50
               dark:placeholder:text-white/50
@@ -93,6 +101,7 @@
               px-4
               rounded-full
               w-auto
+              dark:bg-gray-600 dark:text-white
               hover:bg-gray-400 hover:border-gray-500
             "
           >
@@ -112,27 +121,41 @@ export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
-      input: '',
-      display: '',
-      showAnswer: false,
-      EngLayout: 'QWERTY',
-      ThaLayout: 'Kedmanee',
+      input: '', //input var
+      display: '', // display var
+      showAnswer: false, // show answer state
+      errorMessage: '', // error message var
+      showErrorMessage: false, // show error state
+      EngLayout: 'QWERTY', // eng layout var
+      ThaLayout: 'Kedmanee', // tha layout var
     }
   },
   methods: {
     getData() {
-      this.$axios
-        .$post('https://api.gode.app/v2/raw', {
-          engLayout: this.EngLayout,
-          thaLayout: this.ThaLayout,
-          message: this.input,
-        })
-        .then((x) => {
-          console.log(x)
-          let ans = x.results
-          this.showAnswer = true
-          this.display = `คุณพิมพ์ว่า: ${ans}`
-        })
+      let now = Date.now()
+      let lastclick = parseInt(localStorage.getItem('lastclick') as any)
+      if (lastclick && now - lastclick < 5000) {
+        // querydelay
+        this.errorMessage = `คุณกดเร็วเกินไป! (delay: 5s)`
+        this.showErrorMessage = true
+      } else if (this.input === '') {
+        //preventblankinput
+        this.errorMessage = `ใส่ข้อความก่อน!`
+        this.showErrorMessage = true
+      } else {
+        localStorage.setItem('lastclick', now as any)
+        this.$axios
+          .$post('https://api.gode.app/v2/raw', {
+            engLayout: this.EngLayout,
+            thaLayout: this.ThaLayout,
+            message: this.input,
+          })
+          .then((x) => {
+            let ans = x.results
+            this.showAnswer = true
+            this.display = `คุณพิมพ์ว่า: ${ans}`
+          })
+      }
     },
     toggleTheme() {
       switch (this.$colorMode.preference) {
