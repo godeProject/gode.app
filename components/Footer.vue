@@ -14,7 +14,7 @@
   >
     <div class="flex justify-center">
       <a
-        href="https://github.com/godeProject/godeweb/commits/main"
+        href="https://github.com/godeProject/gode.app/commits/main"
         target="_blank"
         class="block px-3"
         >{{ ver }}</a
@@ -42,7 +42,7 @@ export default Vue.extend({
   name: 'Footer',
   data() {
     return {
-      ver: 'dev - 1.0.0-beta.3',
+      ver: '1.0.0 - API v2',
     }
   },
 })
