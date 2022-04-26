@@ -17,17 +17,15 @@
           <p
             id="display"
             v-if="showAnswer"
+            v-html="display"
             class="text-stone-900 dark:text-white justify-center text-center"
-          >
-            {{ display }}
-          </p>
+          />
           <p
             id="display"
             v-if="showErrorMessage"
+            v-html="errorMessage"
             class="text-stone-900 dark:text-white justify-center text-center"
-          >
-            {{ errorMessage }}
-          </p>
+          />
           <div class="justify-center text-center">
             <select
               v-model="EngLayout"
@@ -152,8 +150,14 @@ export default Vue.extend({
           })
           .then((x) => {
             let ans = x.results
+            this.showErrorMessage = false
             this.showAnswer = true
-            this.display = `คุณพิมพ์ว่า: ${ans}`
+            this.display = `<b>คุณพิมพ์ว่า:</b> ${ans}`
+          })
+          .catch((err) => {
+            this.showErrorMessage = true
+            this.errorMessage = `<b>Error:</b> ${err.message}`
+            console.log(err.message)
           })
       }
     },
