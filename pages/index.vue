@@ -1,18 +1,5 @@
 <template>
-  <div
-    class="
-      bg-gradient-to-br
-      from-zinc-300
-      via-[#f2e1eb]
-      to-zinc-300
-      dark:bg-gradient-to-br
-      dark:from-slate-900
-      dark:via-[#013247]
-      dark:to-slate-900
-      h-screen
-      overflow-y-scroll
-    "
-  >
+  <div class="body">
     <NavBar @toggletheme="toggleTheme" />
     <div class="flex justify-center pt-5 md:pt-6 lg:pt-10 xl:pt-15 2xl:pt-20">
       <div>
