@@ -1,7 +1,20 @@
 <template>
-  <div class="bg-zinc-200 dark:bg-gray-800 h-screen overflow-y-scroll">
+  <div
+    class="
+      bg-gradient-to-br
+      from-zinc-300
+      via-[#f2e1eb]
+      to-zinc-300
+      dark:bg-gradient-to-br
+      dark:from-slate-900
+      dark:via-[#013247]
+      dark:to-slate-900
+      h-screen
+      overflow-y-scroll
+    "
+  >
     <NavBar @toggletheme="toggleTheme" />
-    <div class="flex justify-center pt-20">
+    <div class="flex justify-center pt-5 md:pt-6 lg:pt-10 xl:pt-15 2xl:pt-20">
       <div>
         <img
           class="w-auto ml-auto mr-auto mb-3 drop-shadow-2xl"
@@ -80,7 +93,7 @@
             "
           />
         </div>
-        <div class="mt-8 text-center drop-shadow-xl">
+        <div class="mt-4 text-center drop-shadow-xl">
           <button
             id="button"
             @click="getData"
@@ -109,7 +122,7 @@
               dark:text-white
               justify-center
               text-2xl
-              mt-5
+              mt-4
               text-center
             "
           />
