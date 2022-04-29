@@ -3,7 +3,7 @@
     class="
       fixed
       bottom-0
-      bg-inherit
+      bg-transparent
       w-full
       justify-center
       text-stone-900
@@ -12,14 +12,6 @@
       h-fit
     "
   >
-    <div class="flex justify-center">
-      <a
-        href="https://github.com/godeProject/gode.app/commits/main"
-        target="_blank"
-        class="block px-3"
-        >{{ ver }}</a
-      >
-    </div>
     <div class="flex justify-center">
       <a href="https://github.com/gxjakkap" target="_blank" class="block px-3"
         >Made with ❤️ by GuntxJakka</a
@@ -40,10 +32,5 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Footer',
-  data() {
-    return {
-      ver: '1.0.0 - API v2',
-    }
-  },
 })
 </script>

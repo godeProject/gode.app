@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-zinc-200 dark:bg-gray-800 h-screen">
+  <div class="body">
     <NavBar @toggletheme="toggleTheme" />
-    <div class="flex justify-center pt-20">
+    <div class="flex justify-center pt-5 md:pt-6 lg:pt-10 xl:pt-15 2xl:pt-20">
       <div>
         <img
           class="w-auto ml-auto mr-auto mb-3 drop-shadow-2xl"
@@ -14,12 +14,6 @@
           >
             ลืมเปลี่ยนภาษา? ให้ g;ode เปลี่ยนให้สิ!
           </p>
-          <p
-            id="display"
-            v-if="showAnswer"
-            v-html="display"
-            class="text-stone-900 dark:text-white justify-center text-center"
-          />
           <p
             id="display"
             v-if="showErrorMessage"
@@ -57,7 +51,6 @@
         <div
           class="
             flex
-            border
             drop-shadow-lg
             bg-slate-300
             border-transparent
@@ -87,7 +80,7 @@
             "
           />
         </div>
-        <div class="mt-8 text-center drop-shadow-xl">
+        <div class="mt-4 text-center drop-shadow-xl">
           <button
             id="button"
             @click="getData"
@@ -106,9 +99,25 @@
             g;ode!
           </button>
         </div>
+        <div class="justify-center text-center">
+          <p
+            id="display"
+            v-if="showAnswer"
+            v-html="display"
+            class="
+              text-stone-900
+              dark:text-white
+              justify-center
+              text-2xl
+              mt-4
+              text-center
+            "
+          />
+        </div>
+        <br />
       </div>
     </div>
-    <Footer />
+    <Footer class="mt-5" />
   </div>
 </template>
 
