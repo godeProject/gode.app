@@ -51,7 +51,6 @@
         <div
           class="
             flex
-            border
             drop-shadow-lg
             bg-slate-300
             border-transparent
