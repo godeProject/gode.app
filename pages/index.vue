@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-zinc-200 dark:bg-gray-800 h-screen">
+  <div class="bg-zinc-200 dark:bg-gray-800 h-screen overflow-y-scroll">
     <NavBar @toggletheme="toggleTheme" />
     <div class="flex justify-center pt-20">
       <div>
@@ -14,18 +14,6 @@
           >
             ลืมเปลี่ยนภาษา? ให้ g;ode เปลี่ยนให้สิ!
           </p>
-          <p
-            id="display"
-            v-if="showAnswer"
-            v-html="display"
-            class="text-stone-900 dark:text-white justify-center text-center"
-          />
-          <p
-            id="display"
-            v-if="showErrorMessage"
-            v-html="errorMessage"
-            class="text-stone-900 dark:text-white justify-center text-center"
-          />
           <div class="justify-center text-center">
             <select
               v-model="EngLayout"
@@ -106,9 +94,25 @@
             g;ode!
           </button>
         </div>
+        <div class="justify-center text-center">
+          <p
+            id="display"
+            v-if="showAnswer"
+            v-html="display"
+            class="
+              text-stone-900
+              dark:text-white
+              justify-center
+              text-2xl
+              mt-5
+              text-center
+            "
+          />
+        </div>
+        <br />
       </div>
     </div>
-    <Footer />
+    <Footer class="mt-5" />
   </div>
 </template>
 
