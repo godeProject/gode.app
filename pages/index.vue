@@ -14,6 +14,12 @@
           >
             ลืมเปลี่ยนภาษา? ให้ g;ode เปลี่ยนให้สิ!
           </p>
+          <p
+            id="display"
+            v-if="showErrorMessage"
+            v-html="errorMessage"
+            class="text-stone-900 dark:text-white justify-center text-center"
+          />
           <div class="justify-center text-center">
             <select
               v-model="EngLayout"
