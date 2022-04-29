@@ -13,14 +13,6 @@
     "
   >
     <div class="flex justify-center">
-      <a
-        href="https://github.com/godeProject/godeweb/commits/main"
-        target="_blank"
-        class="block px-3"
-        >{{ ver }}</a
-      >
-    </div>
-    <div class="flex justify-center">
       <a href="https://github.com/gxjakkap" target="_blank" class="block px-3"
         >Made with ❤️ by GuntxJakka</a
       >
@@ -40,10 +32,5 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Footer',
-  data() {
-    return {
-      ver: 'dev - 1.0.0-beta.3',
-    }
-  },
 })
 </script>
