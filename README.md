@@ -1,12 +1,5 @@
-# g;ode.app
-g;ode's frontend. Built with Nuxt.js 2 and TailwindCSS.
-
-## What is this website all about?
-
-[Lullar’s de = กำ](https://lullar-de-3.appspot.com/) has been around for years and that’s what Thais use most when they forget to change their layout. but g;ode (hopefully) did it better, and maintaned.
-
-## Screenshot
-<img src="https://i.imgur.com/6wuUayB.png" height="325">
+# g;ode.app dev branch
+g;ode.app developing branch.
 
 ## Branching
 
