@@ -46,6 +46,10 @@
         px-5
         py-1
       "
+      :class="{
+        hoverblue: darkmodeButtonIsDark,
+        hoverpink: !darkmodeButtonIsDark,
+      }"
       @click="toggleDarkMode"
     >
       <font-awesome-icon
@@ -62,6 +66,16 @@
     </button>
   </div>
 </template>
+
+<style scoped>
+.hoverblue {
+  @apply hover:text-sky-600;
+}
+
+.hoverpink {
+  @apply hover:text-pink-400;
+}
+</style>
 
 <script lang="ts">
 import Vue from 'vue'

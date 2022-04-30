@@ -12,7 +12,7 @@
             id="h2"
             class="text-stone-900 dark:text-white justify-center text-center"
           >
-            ลืมเปลี่ยนภาษา? ให้ g;ode เปลี่ยนให้สิ!
+            ลืมเปลี่ยนภาษา? ให้ g;ode เปลี่ยนให้สิ
           </p>
           <p
             id="display"
@@ -67,7 +67,13 @@
             v-model="input"
             type="text"
             placeholder="ใส่ข้อความตรงนี้..."
-            @keyup.enter="getData"
+            @keyup.enter="
+              getData()
+              toggleFocus(false)
+              blurTarget($event)
+            "
+            @focus="toggleFocus(true)"
+            @blur="toggleFocus(false)"
             class="
               placeholder:italic placeholder:text-stone-900/50
               dark:placeholder:text-white/50
@@ -117,7 +123,7 @@
         <br />
       </div>
     </div>
-    <Footer class="mt-5" />
+    <Footer class="mt-5" v-if="!inputFocused" />
   </div>
 </template>
 
@@ -128,13 +134,25 @@ export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
+      isOnMobile: false,
       input: '', //input var
+      inputFocused: false,
       display: '', // display var
       showAnswer: false, // show answer state
       errorMessage: '', // error message var
       showErrorMessage: false, // show error state
       EngLayout: 'QWERTY', // eng layout var
       ThaLayout: 'Kedmanee', // tha layout var
+    }
+  },
+  mounted() {
+    if (
+      this.$device.isMobile ||
+      this.$device.isSamsung ||
+      this.$device.isIos ||
+      this.$device.isAndroid
+    ) {
+      this.isOnMobile = true
     }
   },
   methods: {
@@ -193,6 +211,14 @@ export default Vue.extend({
           this.$colorMode.preference = 'dark'
           break
       }
+    },
+    toggleFocus(state: boolean) {
+      if (this.isOnMobile) {
+        this.inputFocused = state
+      }
+    },
+    blurTarget(event: any) {
+      event.target.blur()
     },
   },
 })
