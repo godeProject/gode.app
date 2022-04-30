@@ -4,9 +4,9 @@
       flex
       justify-between
       text-base text-black
-      bg-gray-300
-      dark:text-white dark:bg-gray-900
-      shadow-2xl
+      bg-[#c2cbcf]
+      dark:text-white dark:bg-slate-900
+      drop-shadow-2xl
     "
   >
     <div class="flex items-center justify-end">
