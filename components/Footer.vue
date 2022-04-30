@@ -1,17 +1,5 @@
 <template>
-  <div
-    class="
-      fixed
-      bottom-0
-      bg-transparent
-      w-full
-      justify-center
-      text-stone-900
-      dark:text-slate-300
-      text-xxs
-      h-fit
-    "
-  >
+  <div class="footer">
     <div class="flex justify-center">
       <a href="https://github.com/gxjakkap" target="_blank" class="block px-3"
         >Made with ❤️ by GuntxJakka</a
@@ -26,6 +14,12 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.footer {
+  @apply absolute bottom-0 bg-transparent w-full justify-center text-stone-900 dark:text-slate-300 text-footer h-fit;
+}
+</style>
 
 <script lang="ts">
 import Vue from 'vue'
