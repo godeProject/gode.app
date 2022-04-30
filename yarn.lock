@@ -1679,6 +1679,13 @@
     defu "^5.0.0"
     lodash.template "^4.5.0"
 
+"@nuxtjs/device@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/device/-/device-2.1.0.tgz#552c668b2d82dc982d18429845777c19d48d87d6"
+  integrity sha512-TYBdt1w2bmCCWp+MhgcBATZtqyUBi3nSdNpcLGILw5USLwCsC/yZtIkq9YisuEzuRnod9w/RZpoE80MxLftEuA==
+  dependencies:
+    defu "^3.2.2"
+
 "@nuxtjs/eslint-config-typescript@^8.0.0":
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-config-typescript/-/eslint-config-typescript-8.0.0.tgz#dd178386e4243874fa95464f8fce25ee9d66bf7a"
@@ -8023,13 +8030,6 @@ nuxt-fontawesome@^0.4.0:
     "@fortawesome/fontawesome-svg-core" "^1.2.12"
     "@fortawesome/vue-fontawesome" "^0.1.4"
 
-nuxt-user-agent@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/nuxt-user-agent/-/nuxt-user-agent-1.2.2.tgz#696462fcbdbc32d5be2bc63976afd9eef6e9f6b7"
-  integrity sha512-Z9d+r1/PzJAvrr4rX70IWvRyI3qw3RukAGrRZPZ9WeByuCWmVKiW8G1AhdkUOyrDrVoBUC59iLqIVkop/NjSuQ==
-  dependencies:
-    woothee "^1.8.1"
-
 nuxt@^2.15.8:
   version "2.15.8"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.8.tgz#946cba46bdaaf0e3918aa27fd9ea0fed8ed303b0"
@@ -11612,11 +11612,6 @@ widest-line@^3.1.0:
   integrity sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==
   dependencies:
     string-width "^4.0.0"
-
-woothee@^1.8.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/woothee/-/woothee-1.11.1.tgz#ac0a831345d1ca068a27b56f0f298b844769531e"
-  integrity sha512-KdArM3MsNa5tlSBSL29w9ouy9MXZoFPeUdPVnL4QZH3iyV8HsqnwbWw2YLiXEx2wAh0bM55dnl0+qDE6KHBlhQ==
 
 word-wrap@^1.2.3, word-wrap@~1.2.3:
   version "1.2.3"
