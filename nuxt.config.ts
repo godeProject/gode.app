@@ -37,6 +37,7 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxt/postcss8',
+    '@nuxtjs/device'
 
   ],
 
@@ -45,7 +46,6 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/color-mode',
-    'nuxt-user-agent',
     ['nuxt-fontawesome', {
       imports: [
         {

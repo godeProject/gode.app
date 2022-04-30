@@ -147,14 +147,13 @@ export default Vue.extend({
   },
   mounted() {
     if (
-      this.$ua.isFromAndroidMobile() ||
-      this.$ua.isFromIphone() ||
-      this.$ua.isFromSmartphone() ||
-      this.$ua.isFromMobilephone()
+      this.$device.isMobile ||
+      this.$device.isSamsung ||
+      this.$device.isIos ||
+      this.$device.isAndroid
     ) {
       this.isOnMobile = true
     }
-    console.log(this.isOnMobile)
   },
   methods: {
     getData() {
