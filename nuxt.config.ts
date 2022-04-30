@@ -37,6 +37,7 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxt/postcss8',
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -44,6 +45,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/color-mode',
+    'nuxt-user-agent',
     ['nuxt-fontawesome', {
       imports: [
         {
@@ -75,5 +77,8 @@ export default {
   },
   colorMode: {
     classSuffix: ''
+  },
+  server: {
+    host: "0.0.0.0"
   }
 } as NuxtConfig

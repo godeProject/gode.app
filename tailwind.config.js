@@ -7,6 +7,9 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
+    fontSize: {
+      'footer': '.75rem'
+    },
     extend: {},
   },
   plugins: [],
