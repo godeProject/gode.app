@@ -146,6 +146,7 @@ export default Vue.extend({
     }
   },
   mounted() {
+    //check if user is on mobile device
     if (
       this.$device.isMobile ||
       this.$device.isSamsung ||
@@ -168,20 +169,24 @@ export default Vue.extend({
         this.errorMessage = `ใส่ข้อความก่อน!`
         this.showErrorMessage = true
       } else {
-        localStorage.setItem('lastclick', now as any)
+        //query
+        localStorage.setItem('lastclick', now as any) // save latest query time in cookies
         this.$axios
           .$post('https://api.gode.app/v2/raw', {
+            // send a post request
             engLayout: this.EngLayout,
             thaLayout: this.ThaLayout,
             message: this.input,
           })
           .then((x) => {
+            // display an answer
             let ans = x.results
             this.showErrorMessage = false
             this.showAnswer = true
             this.display = `<b>คุณพิมพ์ว่า:</b> ${ans}`
           })
           .catch((err) => {
+            // display an error message
             this.showErrorMessage = true
             this.errorMessage = `<b>Error:</b> ${err.message}`
             console.log(err.message)
@@ -189,6 +194,7 @@ export default Vue.extend({
       }
     },
     toggleTheme() {
+      // darkmode-lightmode toggle
       switch (this.$colorMode.preference) {
         case 'light':
           this.$colorMode.preference = 'dark'
@@ -213,11 +219,13 @@ export default Vue.extend({
       }
     },
     toggleFocus(state: boolean) {
+      //sync input focus state when on mobile for hiding/showing footer
       if (this.isOnMobile) {
         this.inputFocused = state
       }
     },
     blurTarget(event: any) {
+      // blur/unfocus element
       event.target.blur()
     },
   },
