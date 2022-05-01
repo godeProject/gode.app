@@ -17,7 +17,7 @@
 
 <style scoped>
 .footer {
-  @apply absolute bottom-0 bg-transparent w-full justify-center text-stone-900 dark:text-slate-300 text-footer h-fit;
+  @apply sticky bottom-0 bg-transparent w-full justify-center text-stone-900 dark:text-slate-300 text-footer h-auto;
 }
 </style>
 
