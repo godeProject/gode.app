@@ -158,8 +158,11 @@ export default Vue.extend({
   },
   methods: {
     getData() {
-      let now = Date.now()
-      let lastclick = parseInt(localStorage.getItem('lastclick') as any)
+      let now: number = Date.now()
+      let lastclick: number | null = null
+      if (localStorage.getItem('lastclick')) {
+        lastclick = parseInt(localStorage.getItem('lastclick') as string)
+      }
       if (lastclick && now - lastclick < 5000) {
         // querydelay
         this.errorMessage = `คุณกดเร็วเกินไป! (delay: 5s)`
@@ -170,7 +173,7 @@ export default Vue.extend({
         this.showErrorMessage = true
       } else {
         //query
-        localStorage.setItem('lastclick', now as any) // save latest query time in cookies
+        localStorage.setItem('lastclick', now.toString()) // save latest query time in cookies
         this.$axios
           .$post('https://api.gode.app/v2/raw', {
             // send a post request
