@@ -114,7 +114,7 @@
               text-stone-900
               dark:text-white
               justify-center
-              text-2xl
+              text-[2rem]
               mt-4
               text-center
             "
