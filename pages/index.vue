@@ -106,19 +106,32 @@
           </button>
         </div>
         <div class="justify-center text-center">
-          <p
-            id="display"
-            v-if="showAnswer"
-            v-html="display"
-            class="
-              text-stone-900
-              dark:text-white
-              justify-center
-              text-[2rem]
-              mt-4
-              text-center
-            "
-          />
+          <p id="display" v-if="showAnswer" class="mt-4">
+            <span
+              class="
+                text-stone-900
+                dark:text-white
+                justify-center
+                text-[2rem] text-center
+              "
+              v-html="display"
+            />
+            <button>
+              <font-awesome-icon
+                class="
+                  text-[2rem] text-[#d47f82]
+                  dark:text-[#1e9fc9]
+                  hover:text-[#f1b2b4]
+                  dark:hover:text-[#80d0eb]
+                  drop-shadow-xl
+                  ml-2
+                  mr-2
+                "
+                icon="fa-solid fa-clipboard"
+                @click="copyAnswer"
+              />
+            </button>
+          </p>
         </div>
         <br />
       </div>
@@ -138,6 +151,7 @@ export default Vue.extend({
       input: '', //input var
       inputFocused: false,
       display: '', // display var
+      ans: '',
       showAnswer: false, // show answer state
       errorMessage: '', // error message var
       showErrorMessage: false, // show error state
@@ -183,10 +197,10 @@ export default Vue.extend({
           })
           .then((x) => {
             // display an answer
-            let ans = x.results
+            this.ans = x.results
             this.showErrorMessage = false
             this.showAnswer = true
-            this.display = `<b>คุณพิมพ์ว่า:</b> ${ans}`
+            this.display = `<b>คุณพิมพ์ว่า:</b> ${this.ans}`
           })
           .catch((err) => {
             // display an error message
@@ -230,6 +244,16 @@ export default Vue.extend({
     blurTarget(event: any) {
       // blur/unfocus element
       event.target.blur()
+    },
+    async copyAnswer() {
+      try {
+        if (!this.isOnMobile) {
+          alert('Copied answer to clipboard')
+        }
+        await this.$copyText(this.ans)
+      } catch (e) {
+        console.error(e)
+      }
     },
   },
 })

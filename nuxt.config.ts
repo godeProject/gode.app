@@ -46,6 +46,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/color-mode',
+    'nuxt-clipboard',
     ['nuxt-fontawesome', {
       imports: [
         {
