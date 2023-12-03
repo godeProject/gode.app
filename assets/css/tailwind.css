@@ -5,7 +5,7 @@
 @tailwind utilities;
  
 .body {
-  @apply bg-gradient-to-br from-zinc-300 via-[#f7e4ea] to-zinc-300 dark:bg-gradient-to-br dark:from-slate-900 dark:via-[#013247] dark:to-slate-900 min-h-screen overflow-y-scroll;
+  @apply flex flex-col bg-gradient-to-br from-zinc-300 via-[#f7e4ea] to-zinc-300 dark:bg-gradient-to-br dark:from-slate-900 dark:via-[#013247] dark:to-slate-900 min-h-screen overflow-y-scroll;
 }
 
 @layer base {

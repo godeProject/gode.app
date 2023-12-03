@@ -38,7 +38,7 @@
     <title>g;ode - เวนกำ</title>
     <div class="body">
         <NavBar />
-        <div class="flex justify-center pt-5 md:pt-6 lg:pt-10 xl:pt-15 2xl:pt-20">
+        <div class="mb-auto justify-center pt-5 md:pt-6 lg:pt-10 xl:pt-15 2xl:pt-20">
             <div>
                 <img
                     class="w-auto ml-auto mr-auto mb-3 drop-shadow-2xl"
@@ -74,16 +74,18 @@
                     </div>
                 </div>
 
-                <div class="flex drop-shadow-lg bg-slate-300 border-transparent dark:bg-gray-600 border-4 rounded-full p-4 shadow text-xl">
-                    <input 
-                        v-model="userInput"
-                        type="text"
-                        placeholder="ใส่ข้อความตรงนี้..."
-                        @keyup.enter="
-                            getResult()
-                        "
-                        class="placeholder:italic placeholder:text-stone-900/50 dark:placeholder:text-white/50 w-full dark:text-white bg-slate-300 dark:bg-gray-600 outline-none  px-3"
-                    />
+                <div class="w-4/5 lg:w-1/2 mx-auto">
+                    <div class="flex drop-shadow-lg bg-slate-300 border-transparent dark:bg-gray-600 border-4 rounded-full p-4 shadow text-xl">
+                        <input 
+                            v-model="userInput"
+                            type="text"
+                            placeholder="ใส่ข้อความตรงนี้..."
+                            @keyup.enter="
+                                getResult()
+                            "
+                            class="placeholder:italic placeholder:text-stone-900/50 dark:placeholder:text-white/50 w-full dark:text-white bg-slate-300 dark:bg-gray-600 outline-none  px-3"
+                        />
+                    </div>
                 </div>
                 <div class="mt-4 text-center drop-shadow-xl">
                     <Button

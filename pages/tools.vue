@@ -9,5 +9,6 @@
             <h1 class="text-4xl">All g;ode's tools and application.</h1>
             <p class="text-2xl">Coming Soon!</p>
         </div>
+        <Footer />
     </div>
 </template>
