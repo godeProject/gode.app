@@ -29,6 +29,8 @@
         ver.value.hash = `${process.env.CF_PAGES_COMMIT_SHA}`
     }
 
+    console.log(ver.value)
+
     function getResult() {
         godeResult.value = convert(engLayout.value, thaLayout.value, userInput.value)
     }
