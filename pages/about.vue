@@ -1,16 +1,3 @@
-<script setup lang="ts">
-    import { ref } from 'vue'
-    const ver = ref({branch: '', hash: ''})
-
-    if (process.env.NODE_ENV == 'development'){
-        ver.value.branch = 'local'
-    }
-    else {
-        ver.value.branch = `${process.env.CF_PAGES_BRANCH}`
-        ver.value.hash = `${process.env.CF_PAGES_COMMIT_SHA}`
-    }
-</script>
-
 <template>
     <div class="body">
         <NavBar />
@@ -27,6 +14,6 @@
                     </div>
                 </div>
             </div>
-        <Footer :ver="ver" />
+        <Footer />
     </div>
 </template>

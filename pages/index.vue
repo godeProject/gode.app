@@ -19,18 +19,6 @@
     const clipboard = useClipboard()
     const { toast } = useToast()
 
-    let ver = {branch: '', hash: ''}
-
-    if (process.env.NODE_ENV == 'development'){
-        ver.branch = 'local'
-    }
-    else {
-        ver.branch = `${process.env.CF_PAGES_BRANCH}`
-        ver.hash = `${process.env.CF_PAGES_COMMIT_SHA}`
-    }
-
-    console.log(ver)
-
     function getResult() {
         godeResult.value = convert(engLayout.value, thaLayout.value, userInput.value)
     }
@@ -141,6 +129,6 @@
                 <br />
             </div>
         </div>
-        <Footer :ver="ver" />
+        <Footer />
     </div>
 </template>

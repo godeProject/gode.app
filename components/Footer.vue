@@ -1,9 +1,15 @@
 <script setup lang="ts">
+    const runtimeConfig = useRuntimeConfig()
     interface Ver {
         branch: string,
         hash: string
     }
-    defineProps<{ver: Ver}>()
+    let ver = {branch: runtimeConfig.public.CFPAGES_BRANCH as string, hash: runtimeConfig.public.CFPAGES_HASH as string}
+
+    if (process.env.NODE_ENV == 'development'){
+        ver.branch = 'local'
+        ver.hash = '0'
+    }
 
     function truncateGitHash(hash: string) {
         return hash.substring(0, 7)
