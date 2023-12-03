@@ -1,3 +1,5 @@
+import { dependencies as depVer } from './package.json'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -30,7 +32,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       CFPAGES_BRANCH: process.env.CF_PAGES_BRANCH,
-      CFPAGES_HASH: process.env.CF_PAGES_COMMIT_SHA
+      CFPAGES_HASH: process.env.CF_PAGES_COMMIT_SHA,
+      GODEJS_VERSION: depVer['gode.js']
     }
   }
 })

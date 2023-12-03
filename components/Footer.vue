@@ -23,7 +23,7 @@
 <template>
     <div class="footer">
         <div class="flex justify-center">
-            <p>Currently on {{ ver.branch }} at <a class="underline" :href="getGitHubCommitURL(ver.hash)">{{ truncateGitHash(ver.hash) }}</a> </p>
+            <p>Currently on {{ ver.branch }} at <a class="underline" :href="getGitHubCommitURL(ver.hash)">{{ truncateGitHash(ver.hash) }}</a> | gode.js v{{ $config.public.GODEJS_VERSION.replace('^', '') }} </p>
         </div>
         <div class="flex justify-center">
             <a href="https://github.com/gxjakkap" target="_blank" class="block px-3"
