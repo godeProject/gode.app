@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { convert } from 'gode.js'
     import { useClipboard } from '@vueuse/core'
-    import { ref } from 'vue'
+    import { ref, h } from 'vue'
     import type { Ref } from 'vue'
 
     import { useToast } from '@/components/ui/toast/use-toast'
@@ -16,7 +16,7 @@
     const errorMsg = ref('')
     const errorIsShown = ref(false)
 
-    const clipboard = useClipboard()
+    const clipboard = useClipboard({ legacy: true })
     const { toast } = useToast()
 
     function getResult() {
@@ -24,11 +24,18 @@
     }
 
     async function copyToClipboard(){
-        if (clipboard.isSupported){
+        if (clipboard.isSupported.value){
             await clipboard.copy(godeResult.value)
             toast({
                 title: 'Copied!',
-                description: `'${godeResult.value} has been copied to your clipboard'`
+                description: h('span', [h('span', {class: 'font-bold'}, `'${godeResult.value}'`), h('span', ' has been copied to your clipboard!')])
+            })
+        }
+        else {
+            toast({
+                title: 'Error!',
+                description: `Cannot copy to clipboard.`,
+                variant: 'destructive'
             })
         }
     }
