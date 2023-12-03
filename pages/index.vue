@@ -19,17 +19,17 @@
     const clipboard = useClipboard()
     const { toast } = useToast()
 
-    const ver = ref({branch: '', hash: ''})
+    let ver = {branch: '', hash: ''}
 
     if (process.env.NODE_ENV == 'development'){
-        ver.value.branch = 'local'
+        ver.branch = 'local'
     }
     else {
-        ver.value.branch = `${process.env.CF_PAGES_BRANCH}`
-        ver.value.hash = `${process.env.CF_PAGES_COMMIT_SHA}`
+        ver.branch = `${process.env.CF_PAGES_BRANCH}`
+        ver.hash = `${process.env.CF_PAGES_COMMIT_SHA}`
     }
 
-    console.log(ver.value)
+    console.log(ver)
 
     function getResult() {
         godeResult.value = convert(engLayout.value, thaLayout.value, userInput.value)
