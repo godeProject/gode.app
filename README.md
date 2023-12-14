@@ -1,5 +1,5 @@
-# g;ode.app dev branch
-g;ode.app developing branch.
+# g;ode.app
+g;ode's Web Application. Built with Nuxt 3.
 
 ## Branching
 
