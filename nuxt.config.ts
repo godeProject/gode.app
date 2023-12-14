@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
     port: 3000
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxtjs/sanity", "@nuxtjs/google-fonts", "nuxt-svgo"],
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
   hooks: {
     'components:dirs': (dirs) => {
@@ -28,6 +28,10 @@ export default defineNuxtConfig({
     componentName: 'ColorScheme',
     storageKey: 'nuxt-color-mode',
     classSuffix: ''
+  },
+  sanity: { 
+    projectId: '944avg5w',
+    dataset: 'production'
   },
   runtimeConfig: {
     public: {

@@ -32,7 +32,7 @@
         </div>
         <div class="flex justify-center">
             <a
-                href="./about#:~:text=Read%20more%20here.-,License,-MIT%20License"
+                href="https://github.com/godeProject/gode.app/blob/main/LICENSE.md"
                 class="block px-3 py-1"
                 >Copyright © 2023 g;ode Project.</a
             >
