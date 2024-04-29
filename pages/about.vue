@@ -1,7 +1,7 @@
 <template>
-  <div class="body">
-    <NavBar @toggletheme="toggleTheme" />
-        <div class="flex justify-center pt-20">
+    <div class="body">
+        <NavBar />
+        <div class="mb-auto justify-center pt-20">
             <div>
                 <h1 class="text-black dark:text-white text-center drop-shadow-lg text-5xl">About</h1>
                 <div class="mr-auto w-5/6 justify-center items-center ml-auto mb-20">
@@ -14,40 +14,6 @@
                 </div>
             </div>
         </div>
-    <Footer />
-  </div>
+        <Footer />
+    </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  name: 'About',
-  methods: {
-    toggleTheme() {
-      switch (this.$colorMode.preference) {
-        case 'light':
-          this.$colorMode.preference = 'dark'
-          break
-        case 'dark':
-          this.$colorMode.preference = 'light'
-          break
-        case 'system':
-          switch (this.$colorMode.value) {
-            case 'light':
-              this.$colorMode.preference = 'dark'
-              this.$colorMode.value = 'dark'
-              break
-            case 'dark':
-              this.$colorMode.preference = 'light'
-              this.$colorMode.value = 'light'
-              break
-          }
-        default:
-          this.$colorMode.preference = 'dark'
-          break
-      }
-    },
-  },
-})
-</script>
