@@ -28,5 +28,16 @@ export default defineNuxtConfig({
     componentName: 'ColorScheme',
     storageKey: 'nuxt-color-mode',
     classSuffix: ''
+  },
+  sanity: { 
+    projectId: '944avg5w',
+    dataset: 'production'
+  },
+  runtimeConfig: {
+    public: {
+      CFPAGES_BRANCH: process.env.CF_PAGES_BRANCH,
+      CFPAGES_HASH: process.env.CF_PAGES_COMMIT_SHA,
+      GODEJS_VERSION: depVer['gode.js']
+    }
   }
 })
