@@ -34,7 +34,7 @@
             <a
                 href="https://github.com/godeProject/gode.app/blob/main/LICENSE.md"
                 class="block px-3 py-1"
-                >Copyright © 2023 g;ode Project.</a
+                >Copyright © 2024 g;ode Project.</a
             >
         </div>
     </div>
